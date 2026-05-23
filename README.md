@@ -1,4 +1,4 @@
-# SkillBridge — Smart Job Portal for Graduates
+# Smart Job Portal for Graduates
 
 A modern, intelligent job portal built to bridge the gap between graduate skills and employer expectations. SkillBridge goes beyond a traditional job board by analysing the compatibility between a graduate's skill profile and a job's requirements — showing exactly which skills match and which ones are missing, then recommending areas for improvement.
 
