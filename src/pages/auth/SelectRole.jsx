@@ -57,7 +57,7 @@ const SelectRole = () => {
   };
 
   return (
-    <div className='w-full'>
+    <div className='w-full min-h-screen flex items-center justify-center px-4 py-12 bg-bg'>
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
