@@ -5,8 +5,6 @@ import {
   ArrowLeft,
   MapPin,
   Briefcase,
-  Clock,
-  Building2,
   CheckCircle2,
   XCircle,
   Globe,
@@ -90,7 +88,7 @@ const JobDetail = () => {
   const { skillGap, hasApplied } = job
 
   return (
-    <div className='flex flex-col gap-6 max-w-4xl'>
+    <div className='flex w-full max-w-none flex-col gap-6'>
 
       {/* ── Back button ── */}
       <button
@@ -101,10 +99,10 @@ const JobDetail = () => {
         Back to jobs
       </button>
 
-      <div className='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+      <div className='grid w-full grid-cols-1 gap-6 xl:grid-cols-3 2xl:grid-cols-4'>
 
         {/* ── Left column — main info ── */}
-        <div className='lg:col-span-2 flex flex-col gap-5'>
+        <div className='flex min-w-0 flex-col gap-5 xl:col-span-2 2xl:col-span-3'>
 
           {/* Job header card */}
           <div className='rounded-2xl border border-border bg-surface p-6'>
@@ -221,7 +219,7 @@ const JobDetail = () => {
         </div>
 
         {/* ── Right column — skill gap + apply ── */}
-        <div className='flex flex-col gap-5'>
+        <div className='flex min-w-0 flex-col gap-5'>
 
           {/* Apply card */}
           <div className='rounded-2xl border border-border bg-surface p-5'>

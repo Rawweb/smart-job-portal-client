@@ -34,7 +34,6 @@ const EmployerApplicants = () => {
     queryFn: () => fetchApplicants(selectedJobId),
     // Only runs when a job is selected
     enabled: !!selectedJobId,
-    staleTime: 2 * 60 * 1000,
   });
 
   const statusMutation = useMutation({

@@ -106,7 +106,7 @@ const EmployerPostJob = () => {
   };
 
   return (
-    <div className='flex flex-col gap-6 max-w-3xl'>
+    <div className='flex w-full max-w-none flex-col gap-6'>
       <div>
         <h1 className='text-2xl font-bold text-text-heading'>Post a Job</h1>
         <p className='text-sm text-text-muted mt-1'>
@@ -140,7 +140,7 @@ const EmployerPostJob = () => {
           </div>
 
           {/* Sector + Job Type */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
             <div>
               <label className='block text-sm font-medium text-text mb-1.5'>
                 Sector <span className='text-danger'>*</span>
@@ -188,7 +188,7 @@ const EmployerPostJob = () => {
           </div>
 
           {/* Experience + Qualification */}
-          <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+          <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3'>
             <div>
               <label className='block text-sm font-medium text-text mb-1.5'>
                 Experience level
@@ -335,7 +335,7 @@ const EmployerPostJob = () => {
           </div>
 
           {/* Skill list */}
-          <div className='max-h-60 overflow-y-auto flex flex-col gap-4 pr-1'>
+          <div className='skill-scrollbar max-h-60 overflow-y-auto flex flex-col gap-4 pr-2'>
             {filteredCategories.map(({ category, skills }) => (
               <div key={category}>
                 <p className='text-xs font-semibold text-text-muted uppercase tracking-wide mb-2'>

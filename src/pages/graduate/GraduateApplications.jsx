@@ -14,7 +14,6 @@ const GraduateApplications = () => {
   const { data: applications, isLoading } = useQuery({
     queryKey: ['my-applications'],
     queryFn: fetchMyApplications,
-    staleTime: 2 * 60 * 1000,
   });
 
   return (

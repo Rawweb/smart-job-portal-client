@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import PageLoader from './PageLoader';
-import getRedirectPath from './getRedirectPath';
+import getRedirectPath from './getRedirectedPath';
 
 const PublicRoute = ({ children }) => {
   const { user, loading } = useAuth();

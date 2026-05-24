@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import api from '../../api/axios';
 import { useAuth } from '../../context/AuthContext';
 import logo from '../../assets/logo.png';
+import getRedirectPath from '../../components/router/getRedirectedPath';
 
 const schema = z.object({
   email: z
@@ -38,18 +39,7 @@ const Login = () => {
       saveAuth(data.user, data.token);
       toast.success('Welcome back!');
 
-      // Redirect based on role and onboarding status
-      if (!data.user.role) {
-        navigate('/select-role');
-      } else if (!data.user.isOnboarded) {
-        navigate(
-          data.user.role === 'graduate' ? '/graduate/onboarding' : '/employer/onboarding'
-        );
-      } else {
-        navigate(
-          data.user.role === 'graduate' ? '/graduate/dashboard' : '/employer/dashboard'
-        );
-      }
+      navigate(getRedirectPath(data.user));
     } catch (error) {
       const message = error.response?.data?.message || 'Login failed';
       toast.error(message);
