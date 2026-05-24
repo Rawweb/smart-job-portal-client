@@ -33,14 +33,12 @@
     0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
   --shadow-modal:
     0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-
-
 }
 
-  /* ===============================
+/* ===============================
    Dark Mode Overrides
    =============================== */
-  .dark {
+.dark {
   /* brand */
   --color-primary: #6366f1;
   --color-primary-hover: #818cf8;
@@ -54,7 +52,7 @@
   --color-danger: #f87171;
 
   /* neutrals */
-  --color-bg: #0f172a;
+  --color-bg: #0a0f1b;
   --color-surface: #1e293b;
   --color-border: #334155;
 
@@ -66,12 +64,10 @@
 
   /* shadows */
   --shadow-card:
-    0 1px 3px 0 rgb(0 0 0 / 0.35),
-    0 1px 2px -1px rgb(0 0 0 / 0.35);
+    0 1px 3px 0 rgb(0 0 0 / 0.35), 0 1px 2px -1px rgb(0 0 0 / 0.35);
 
   --shadow-modal:
-    0 20px 25px -5px rgb(0 0 0 / 0.45),
-    0 8px 10px -6px rgb(0 0 0 / 0.45);
+    0 20px 25px -5px rgb(0 0 0 / 0.45), 0 8px 10px -6px rgb(0 0 0 / 0.45);
 }
 
 @layer base {
@@ -80,11 +76,18 @@
     font-family: var(--font-sans);
     scroll-behavior: smooth;
     overflow-x: hidden;
+    background-color: var(--color-bg);
+    color: var(--color-text);
   }
 }
 
 @layer components {
   .container {
     @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .btn {
+    @apply w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-indigo-400
+  text-white text-sm font-medium py-2.5 rounded-lg transition-colors duration-200;
   }
 }
