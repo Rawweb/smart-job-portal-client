@@ -23,12 +23,16 @@ import GraduateProfile from './pages/graduate/GraduateProfile';
 import EmployerProfile from './pages/employer/EmployerProfile';
 import AdminUsers from './pages/admin/AdminUsers';
 import AdminJobs from './pages/admin/AdminJobs';
+import Landing from './pages/Landing';
+import UserLayout from './components/layouts/UserLayouts';
 
 function App() {
   return (
     <Routes>
       {/* default */}
-      <Route path='/' element={<Navigate to='/login' />} />
+      <Route element={<UserLayout />}>
+        <Route path='/' element={<Landing />} />
+      </Route>
 
       {/* auth routes */}
       <Route element={<AuthLayout />}>
@@ -55,10 +59,7 @@ function App() {
         <Route path='/employer/dashboard' element={<EmployerDashboard />} />
         <Route path='/employer/post-job' element={<EmployerPostJob />} />
         <Route path='/employer/profile' element={<EmployerProfile />} />
-        <Route
-          path='/employer/applicants'
-          element={<EmployerApplications />}
-        />
+        <Route path='/employer/applicants' element={<EmployerApplications />} />
       </Route>
 
       {/* admin routes */}
