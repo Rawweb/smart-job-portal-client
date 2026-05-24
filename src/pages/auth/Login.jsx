@@ -43,11 +43,11 @@ const Login = () => {
         navigate('/select-role');
       } else if (!data.user.isOnboarded) {
         navigate(
-          data.user.role === 'graduate' ? '/onboarding' : '/employer/onboarding'
+          data.user.role === 'graduate' ? '/graduate/onboarding' : '/employer/onboarding'
         );
       } else {
         navigate(
-          data.user.role === 'graduate' ? '/dashboard' : '/employer/dashboard'
+          data.user.role === 'graduate' ? '/graduate/dashboard' : '/employer/dashboard'
         );
       }
     } catch (error) {

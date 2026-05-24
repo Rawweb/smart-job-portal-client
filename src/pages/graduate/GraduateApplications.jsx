@@ -1,13 +1,13 @@
 import React from 'react';
 
-const GraduateDashboard = () => {
+const GraduateApplications = () => {
   return (
     <div>
       <h1 className='text-2xl font-bold text-text-heading'>
-        Graduate Dashboard
+        Graduate Applications
       </h1>
     </div>
   );
 };
 
-export default GraduateDashboard;
+export default GraduateApplications;
