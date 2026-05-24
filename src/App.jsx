@@ -10,6 +10,7 @@ import GraduateLayout from './components/layouts/GraduateLayout';
 import GraduateOnboarding from './pages/graduate/GraduateOnboarding';
 import GraduateDashboard from './pages/graduate/GraduateDashboard';
 import GraduateJobs from './pages/graduate/GraduateJobs';
+import JobDetail from './pages/graduate/JobDetail';
 import GraduateApplications from './pages/graduate/GraduateApplications';
 
 // employer layout - routes
@@ -17,7 +18,7 @@ import EmployerLayout from './components/layouts/EmployerLayout';
 import EmployerDashboard from './pages/employer/EmployerDashboard';
 import EmployerPostJob from './pages/employer/EmployerPostJob';
 import EmployerOnboarding from './pages/employer/EmployerOnboarding';
-import EmployerApplications from './pages/employer/EmployerApplications';
+import EmployerApplicants from './pages/employer/EmployerApplicants';
 
 // admin layout - routes
 import AdminLayout from './components/layouts/AdminLayout';
@@ -51,7 +52,9 @@ function App() {
       <Route element={<GraduateLayout />}>
         <Route path='/graduate/dashboard' element={<GraduateDashboard />} />
         <Route path='/graduate/jobs' element={<GraduateJobs />} />
+        <Route path='/graduate/jobs/:id' element={<JobDetail />} />
         <Route path='/graduate/profile' element={<GraduateProfile />} />
+        <Route path='/graduate/jobs/:id' element={<JobDetail />} />
         <Route
           path='/graduate/applications'
           element={<GraduateApplications />}
@@ -63,7 +66,7 @@ function App() {
         <Route path='/employer/dashboard' element={<EmployerDashboard />} />
         <Route path='/employer/post-job' element={<EmployerPostJob />} />
         <Route path='/employer/profile' element={<EmployerProfile />} />
-        <Route path='/employer/applicants' element={<EmployerApplications />} />
+        <Route path='/employer/applicants' element={<EmployerApplicants />} />
       </Route>
 
       {/* standalone routes - no sidebar during onboarding */}
