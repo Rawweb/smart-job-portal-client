@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import api from '../api/axios';
+import {useQueryClient} from '@tanstack/react-query';
 
 // Create the AuthContext
 const AuthContext = createContext(null);
@@ -7,6 +8,7 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
+  const queryClient = useQueryClient();
 
   // check if the token is valid and fetch user data on initial load
   useEffect(() => {
@@ -38,6 +40,9 @@ export const AuthProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem('token');
     setUser(null);
+
+    // clear all cached queries to prevent showing stale data after logout
+    queryClient.clear();
   };
 
   return (

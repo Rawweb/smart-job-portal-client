@@ -37,12 +37,12 @@ const EmployerDashboard = () => {
   const navigate = useNavigate();
 
   const { data: stats, isLoading } = useQuery({
-    queryKey: ['employer-stats'],
+    queryKey: ['employer-stats', user?.id],
     queryFn: fetchEmployerStats,
     staleTime: 5 * 60 * 1000,
   });
 
-  const displayName = stats?.companyName || user?.email?.split('@')[0];
+  const displayName = stats?.companyName || '...';
 
   return (
     <div className='flex flex-col gap-8'>
