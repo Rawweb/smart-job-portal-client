@@ -42,7 +42,7 @@ const EmployerDashboard = () => {
     staleTime: 5 * 60 * 1000,
   });
 
-  const displayName = stats?.companyName || '...';
+  const displayName = stats?.companyName || user?.email?.split('@')[0];
 
   return (
     <div className='flex flex-col gap-8'>
